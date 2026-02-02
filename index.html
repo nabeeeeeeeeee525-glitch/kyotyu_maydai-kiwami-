@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>めいだい恐竜ゲーム - 極 -</title>
+
+  <!-- OGP -->
+  <meta property="og:title" content="めいだい恐竜ゲーム - 極 -">
+  <meta property="og:description" content="恐竜めいだいが迫る障害物を回避する超高難度バージョン。">
+  <meta property="og:image" content="image/samune.png">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+  <div class="game-container" id="game">
+    <div class="ground" id="ground"></div>
+    <div class="dino" id="dino"></div>
+
+    <div class="ui">
+      <div>スペース / ↑：ジャンプ　Shift：しゃがみ</div>
+      <div>スコア: <span id="score">0</span></div>
+    </div>
+
+    <div class="message" id="message">
+      スペースキーでスタート
+    </div>
+
+    <div class="jump-btn" id="jumpBtn">ジャンプ</div>
+
+    <div class="name-input" id="nameInput">
+      <p>名前を入力してスコアを登録</p>
+      <input type="text" id="playerName" maxlength="12" placeholder="名前">
+      <button id="submitScore">送信</button>
+      <button id="skipScore">スキップ</button>
+    </div>
+  </div>
+
+  <div class="volume-box">
+    音量：
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.1">
+  </div>
+
+  <div class="ranking" id="ranking">
+    <h3>ランキング（上位50名）</h3>
+    <ol id="rankingList"></ol>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
