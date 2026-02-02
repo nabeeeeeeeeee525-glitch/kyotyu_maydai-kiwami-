@@ -16,9 +16,9 @@ const db = firebase.firestore();
 /* ------------------------------
    音源
 ------------------------------ */
-const jumpSound = new Audio("sound/jump.mp3");
-const gameOverSound = new Audio("sound/gameover.mp3");
-const bgm = new Audio("sound/bgm.mp3");
+const jumpSound = new Audio("./sound/jump.mp3");
+const gameOverSound = new Audio("./sound/gameover.mp3");
+const bgm = new Audio("./sound/bgm.mp3");
 bgm.loop = true;
 
 // ★ 初期音量を 0.10 に設定
