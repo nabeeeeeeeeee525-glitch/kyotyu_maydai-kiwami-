@@ -370,21 +370,28 @@ window.addEventListener("keydown", e => {
 
   if (e.code === "Space" || e.code === "ArrowUp") {
     e.preventDefault();
-
-    // ★ スコア送信 UI が出ているときは無効化
     if (nameInputVisible) return;
-
     handleJump();
   }
 
-  if (e.code === "ShiftLeft" || e.code === "ShiftRight"|| e.code === "ArrowDown") {
+  if (
+    e.code === "ShiftLeft" ||
+    e.code === "ShiftRight" ||
+    e.code === "ArrowDown"
+  ) {
+    e.preventDefault();   // ← これが重要！
     isCrouching = true;
     dino.classList.add("crouch");
   }
 });
 
 window.addEventListener("keyup", e => {
-  if (e.code === "ShiftLeft" || e.code === "ShiftRight"|| e.code === "ArrowDown") {
+  if (
+    e.code === "ShiftLeft" ||
+    e.code === "ShiftRight" ||
+    e.code === "ArrowDown"
+  ) {
+    e.preventDefault();
     isCrouching = false;
     dino.classList.remove("crouch");
   }
