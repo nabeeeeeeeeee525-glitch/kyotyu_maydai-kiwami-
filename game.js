@@ -377,14 +377,14 @@ window.addEventListener("keydown", e => {
     handleJump();
   }
 
-  if (e.code === "ShiftLeft" || e.code === "ShiftRight") {
+  if (e.code === "ShiftLeft" || e.code === "ShiftRight"|| e.code === "ArrowDown") {
     isCrouching = true;
     dino.classList.add("crouch");
   }
 });
 
 window.addEventListener("keyup", e => {
-  if (e.code === "ShiftLeft" || e.code === "ShiftRight") {
+  if (e.code === "ShiftLeft" || e.code === "ShiftRight"|| e.code === "ArrowDown") {
     isCrouching = false;
     dino.classList.remove("crouch");
   }
